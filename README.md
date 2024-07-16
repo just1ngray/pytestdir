@@ -11,6 +11,16 @@ inconvienient to work with.
 - Temporary resources are created elsewhere on disk unless `--basetemp` is
   provided as a pytest argument
 
+## Installation
+
+One day this might be packaged on pypi.
+
+```shell
+pip install git+https://github.com/just1ngray/pytestdir.git
+```
+
+## About
+
 `pytestdir` is a fixture that creates a `.gitignore`'d directory in your pytest
 root where each test can receive a distinct and unique folder. The created
 `.pytestdir/` folder will be deleted *next* time you run `pytest`, which allows
