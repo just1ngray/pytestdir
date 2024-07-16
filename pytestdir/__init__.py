@@ -1,1 +1,1 @@
-from .plugin import pytestdir, pytest_sessionstart
+from .plugin import pytestdir

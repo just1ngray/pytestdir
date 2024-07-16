@@ -84,3 +84,11 @@ def pytest_collection_finish(session: pytest.Session):
         pytestdir_folder = session.config.rootpath / _FOLDER_NAME
         pytestdir_folder.mkdir()
         pytestdir_folder.joinpath(".gitignore").write_text("**")
+
+
+def pytest_report_header(config: pytest.Config):
+    """
+    Prints the path to the pytestdir folder.
+    """
+    path = config.rootpath / _FOLDER_NAME
+    print(f"pytestdir: {path.absolute().resolve()}")
