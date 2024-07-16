@@ -1,5 +1,4 @@
 from pathlib import Path
-from typing import Literal
 
 import pytest
 
@@ -16,6 +15,6 @@ def test_parametrize(test_param, pytestdir: Path):
 @pytest.mark.parametrize("a", [1])
 @pytest.mark.parametrize("b", [1, 2])
 @pytest.mark.parametrize("c", [1, 2, 3])
-def test_multi_parametrize(a, b: Literal[1] | Literal[2], c, pytestdir: Path):
+def test_multi_parametrize(a, b, c, pytestdir: Path):
     assert list(pytestdir.iterdir()) == []
     pytestdir.joinpath("args.txt").write_text(f"a={a}, b={b}, c={c}")
