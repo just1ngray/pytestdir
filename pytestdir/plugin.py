@@ -67,6 +67,12 @@ def pytest_sessionstart(session: pytest.Session):
     if pytestdir_folder.exists():
         _rm_r(pytestdir_folder)
 
+    # to avoid confusion look for other _FOLDER_NAME folders so they are removed as well
+    for folder in session.config.rootpath.rglob(f"**/{_FOLDER_NAME}"):
+        if not folder.is_dir():
+            continue
+        _rm_r(folder)
+
 
 def pytest_collection_finish(session: pytest.Session):
     """
