@@ -30,7 +30,7 @@ def pytestdir(request: pytest.FixtureRequest):
     )
 
     try:
-        path.mkdir(parents=True, exist_ok=True) # FIXME make False
+        path.mkdir(parents=True, exist_ok=False)
     except FileExistsError as exc:
         raise FileExistsError(f"Directory {path} already exists, but it should have been cleaned up "
                               f"by pytest_sessionstart!") from exc
