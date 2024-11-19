@@ -7,6 +7,6 @@ setup(
     entry_points={ "pytest11": "name_of_plugin = pytestdir.plugin" },
     classifiers=["Framework :: Pytest"],
     install_requires=[
-        "pytest>=7.0.0,<8.0.0",
+        "pytest>=7.0.0",
     ],
 )
